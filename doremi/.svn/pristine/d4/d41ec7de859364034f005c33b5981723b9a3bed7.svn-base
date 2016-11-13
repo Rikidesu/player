@@ -1,0 +1,15 @@
+<?php
+require_once 'qiniu/autoload.php';
+
+use Qiniu\Auth;
+
+$accessKey = 'A6xQFwp1v68-fYmti-AT8q7FhrwquI0KI1RjUZXB';
+$secretKey = '3ujG6gv_JL4gp0CWnK_IYM5abtOxKe1xWBM2dI_-';
+$auth = new Auth($accessKey, $secretKey);
+
+$bucket = 'musicroom';
+$upToken = $auth->uploadToken($bucket);
+
+$json['uptoken'] = $upToken;
+
+echo json_encode($json);

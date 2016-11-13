@@ -1,0 +1,11 @@
+name: riki
+version: 10
+handle:
+
+- directoryindex:  index.html index.htm index.php
+
+- errordoc: 404 /404.php
+
+- rewrite: if(path ~ "upload.html") goto "upload.php"
+
+- rewrite: if(path ~ "login.html") goto "login.php"
